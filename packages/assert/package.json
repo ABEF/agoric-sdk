@@ -106,5 +106,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "ses": "file:/Users/markmiller/src/ongithub/agoric/SES-shim/packages/ses"
   }
 }

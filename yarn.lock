@@ -50,6 +50,11 @@
     rollup "^1.17.0"
     rollup-plugin-node-resolve "^5.2.0"
 
+"@agoric/transform-module@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@agoric/transform-module/-/transform-module-0.4.1.tgz#9fb152364faf372e1bda535cb4ef89717724f57c"
+  integrity sha512-4TJJHXeXAWu1FCA7yXCAZmhBNoGTB/BEAe2pv+J2X8W/mJTr9b395OkDCSRMpzvmSshLfBx6wT0D7dqWIWEC1w==
+
 "@babel/code-frame@^7.0.0":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.5.5.tgz#bc0782f6d69f7b7d49531219699b988f669a8f9d"
@@ -9235,6 +9240,13 @@ ses@^0.10.1:
     "@agoric/babel-standalone" "^7.9.5"
     "@agoric/make-hardener" "^0.1.0"
     "@agoric/transform-module" "^0.3.0"
+
+"ses@file:../SES-shim/packages/ses":
+  version "0.10.4"
+  dependencies:
+    "@agoric/babel-standalone" "^7.9.5"
+    "@agoric/make-hardener" "^0.1.0"
+    "@agoric/transform-module" "^0.4.1"
 
 set-blocking@^2.0.0, set-blocking@~2.0.0:
   version "2.0.0"

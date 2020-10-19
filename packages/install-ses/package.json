@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@agoric/eventual-send": "^0.11.1",
-    "ses": "^0.10.1"
+    "ses": "file:/Users/markmiller/src/ongithub/agoric/SES-shim/packages/ses"
   },
   "files": [
     "src/**/*.js"
