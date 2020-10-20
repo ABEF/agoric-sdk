@@ -119,7 +119,7 @@ export function makeLocalVatManagerFactory(tools) {
 
     const vatNS = await importBundle(bundle, {
       filePrefix: vatID,
-      endowments: harden({ ...vatEndowments, console: vatConsole }),
+      endowments: harden({ ...vatEndowments, console: vatConsole, assert }),
       inescapableTransforms,
       inescapableGlobalLexicals,
     });

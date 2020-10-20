@@ -3,9 +3,9 @@
 
 // @ts-check
 
-import 'ses';
 import './types';
 
 const assert = globalThis.assert;
+
 const { details, quote } = assert;
 export { assert, details, quote, quote as q };

@@ -106,6 +106,7 @@ fromParent.on('data', data => {
     const [bundle, vatParameters] = margs;
     const endowments = {
       console: makeConsole(`SwingSet:vatWorker`),
+      assert,
     };
     importBundle(bundle, { endowments }).then(vatNS => {
       workerLog(`got vatNS:`, Object.keys(vatNS).join(','));

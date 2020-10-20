@@ -1,16 +1,14 @@
+/* global assert */
+
 // @ts-check
 
 import { importBundle } from '@agoric/import-bundle';
+// import { assert } from '@agoric/assert';
 
 const evalContractBundle = (bundle, additionalEndowments = {}) => {
-  // Make the console more verbose.
-  const louderConsole = {
-    ...console,
-    log: console.info,
-  };
-
   const defaultEndowments = {
-    console: louderConsole,
+    console,
+    assert,
   };
 
   const fullEndowments = Object.create(null, {
@@ -23,7 +21,9 @@ const evalContractBundle = (bundle, additionalEndowments = {}) => {
 
   const installation = importBundle(bundle, {
     endowments: fullEndowments,
-  }).catch(() => {}); // Don't trigger Node.js's UnhandledPromiseRejectionWarning
+  });
+  // Don't trigger Node.js's UnhandledPromiseRejectionWarning
+  installation.catch(() => {});
   return installation;
 };
 
