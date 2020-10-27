@@ -82,7 +82,7 @@ parentPort.on('message', ([type, ...margs]) => {
     workerLog(`got start`);
     sendUplink(['gotStart']);
   } else if (type === 'setBundle') {
-    const [bundle, vatParameters] = margs;
+    const [bundle, vatParameters, virtualObjectCacheSize] = margs;
 
     function testLog(...args) {
       sendUplink(['testLog', ...args]);
@@ -113,7 +113,13 @@ parentPort.on('message', ([type, ...margs]) => {
       makeMarshal,
       testLog,
     };
-    const ls = makeLiveSlots(syscall, vatID, vatPowers, vatParameters);
+    const ls = makeLiveSlots(
+      syscall,
+      vatID,
+      vatPowers,
+      vatParameters,
+      virtualObjectCacheSize,
+    );
 
     const endowments = {
       ...ls.vatGlobals,

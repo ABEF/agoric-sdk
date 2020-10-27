@@ -93,6 +93,7 @@ export function makeLocalVatManagerFactory(tools) {
       enableInternalMetering = false,
       vatParameters = {},
       vatConsole,
+      virtualObjectCacheSize,
     } = managerOptions;
     assert(vatConsole, 'vats need managerOptions.vatConsole');
 
@@ -107,7 +108,13 @@ export function makeLocalVatManagerFactory(tools) {
 
     // we might or might not use this, depending upon whether the vat exports
     // 'buildRootObject' or a default 'setup' function
-    const ls = makeLiveSlots(syscall, vatID, vatPowers, vatParameters);
+    const ls = makeLiveSlots(
+      syscall,
+      vatID,
+      vatPowers,
+      vatParameters,
+      virtualObjectCacheSize,
+    );
 
     let meterRecord = null;
     if (metered) {

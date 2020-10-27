@@ -52,6 +52,7 @@ export function makeVatManagerFactory({
       'enableSetup',
       'enableInternalMetering',
       'notifyTermination',
+      'virtualObjectCacheSize',
       'vatParameters',
       'vatConsole',
     ]);
